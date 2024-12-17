@@ -1,0 +1,110 @@
+{
+    "response": [
+        {
+            "parser_output": [
+                {
+                    "dependency_relation": "pof__cn",
+                    "head_index": "2",
+                    "index": 1,
+                    "original_word": "mohana",
+                    "pos_tag": "NNPC"
+                },
+                {
+                    "dependency_relation": "k1",
+                    "head_index": "4",
+                    "index": 2,
+                    "original_word": "lAla",
+                    "pos_tag": "NNP",
+                    "cnx_vale": "hello"
+                },
+                {
+                    "dependency_relation": "k2p",
+                    "head_index": "4",
+                    "index": 3,
+                    "original_word": "bAjAra",
+                    "pos_tag": "NNP"
+                },
+                {
+                    "dependency_relation": "main",
+                    "head_index": "0",
+                    "index": 4,
+                    "original_word": "gayA",
+                    "pos_tag": "VM"
+                },
+                {
+                    "dependency_relation": "lwg__vaux",
+                    "head_index": "4",
+                    "index": 5,
+                    "original_word": "WA",
+                    "pos_tag": "VAUX"
+                },
+                {
+                    "dependency_relation": "rsym",
+                    "head_index": "4",
+                    "index": 6,
+                    "original_word": "।",
+                    "pos_tag": "SYM"
+                }
+            ],
+            "project_id": 1,
+            "sentence": "मोहन लाल बाजार गया था ।",
+            "sentence_id": 1
+        },
+        {
+            "parser_output": [
+                {
+                    "dependency_relation": "k1",
+                    "head_index": "6",
+                    "index": 1,
+                    "original_word": "mEM",
+                    "pos_tag": "PRP"
+                },
+                {
+                    "dependency_relation": "k7t",
+                    "head_index": "6",
+                    "index": 2,
+                    "original_word": "subaha",
+                    "pos_tag": "NN"
+                },
+                {
+                    "dependency_relation": "lwg__psp",
+                    "head_index": "2",
+                    "index": 3,
+                    "original_word": "se",
+                    "pos_tag": "PSP"
+                },
+                {
+                    "dependency_relation": "k7t",
+                    "head_index": "6",
+                    "index": 4,
+                    "original_word": "rAwa",
+                    "pos_tag": "NN"
+                },
+                {
+                    "dependency_relation": "lwg__psp",
+                    "head_index": "4",
+                    "index": 5,
+                    "original_word": "waka",
+                    "pos_tag": "PSP"
+                },
+                {
+                    "dependency_relation": "main",
+                    "head_index": "0",
+                    "index": 6,
+                    "original_word": "paDZUMgA",
+                    "pos_tag": "VM"
+                },
+                {
+                    "dependency_relation": "rsym",
+                    "head_index": "6",
+                    "index": 7,
+                    "original_word": "।",
+                    "pos_tag": "SYM"
+                }
+            ],
+            "project_id": 1,
+            "sentence": "मैं सुबह से रात तक पढ़ूंगा ।",
+            "sentence_id": 2
+        }
+    ]
+}
