@@ -145,13 +145,8 @@
                     "pos_tag": "PSP",
                     "wx_word": "se",
                     "morph_info": {
-                        "root": "mEM",
-                        "cat": "p",
-                        "case": "d",
-                        "parsarg": "0",
-                        "gen": "m",
-                        "num": "s",
-                        "per": "u"
+                        "root": "se",
+                        "cat": "prsg"
                     }
                 },
                 {

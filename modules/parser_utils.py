@@ -6,7 +6,18 @@ def merge_morph_with_parser(sentences_data, parser_output, mapper_dict):
         sentence_id = sentence_data["sentence_id"]
         original_words = sentence_data["original"]
         morph_outputs = sentence_data["morph_outputs"]
-        
+        print(morph_outputs)
+        # Preprocess morph_outputs into a dictionary
+        morph_dict = {}
+        for morph in morph_outputs:
+            entries = morph.split('/')
+            for entry in entries:
+                if entry.startswith('^'):
+                    entry = entry[1:]  # Remove leading '^'
+                root = entry.split('<')[0]  # Extract root
+                if root not in morph_dict:
+                    morph_dict[root] = morph
+
         matching_parser = next((item for item in parser_output if item["sentence_id"] == sentence_id), None)
 
         if matching_parser:
@@ -14,12 +25,11 @@ def merge_morph_with_parser(sentences_data, parser_output, mapper_dict):
                 word = parser_word["wx_word"]
                 if "pos_tag" in parser_word:
                     pos_tag = parser_word["pos_tag"]
-                    # print(pos_tag)
                 else:
                     continue
-
-                morph_output = next((mo for mo in morph_outputs if word in mo), None)
-                # print(morph_output)
+                
+                # Use preprocessed dictionary for matching
+                morph_output = morph_dict.get(word, None)
                 if morph_output is None:
                     print(f"No morph output found for word: {word}")
                     continue
@@ -30,6 +40,7 @@ def merge_morph_with_parser(sentences_data, parser_output, mapper_dict):
                     print(f"Error processing morph_output: {morph_output}, error: {e}")
                     continue
 
+                # Extract root and tags
                 root_pattern = r"^(\w+)"
                 root_pattern1 = r"^(\*?\w+\$?)"
                 tags_pattern = r"<([^>]+)>"

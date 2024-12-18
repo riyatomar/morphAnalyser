@@ -1,7 +1,7 @@
 import os
 from modules.file_io import read_from_json, read_parser_output, save_to_json
 from modules.wx_converter import devanagari_to_wx
-from modules.morph_analysis import morph_analyzer
+from modules.morph_analysis import morph_analyzer, get_morph_info
 from modules.parser_utils import merge_morph_with_parser
 from constant.map import MAPPER_DICT
 from modules.subprocess_runner import run_morph_analyser
@@ -21,7 +21,7 @@ if __name__ == "__main__":
         morph_output, original_words = morph_analyzer(wx_notation, run_morph_analyser)
         sentence_data["original"] = original_words
         sentence_data["morph_outputs"] = morph_output.split("\n")
-
+        # morph_info = get_morph_info(morph_output, pos_tag, MAPPER_DICT)
         # print('--------------->',sentence_data["original"])
         # print('================>', sentence_data["morph_outputs"])
 
