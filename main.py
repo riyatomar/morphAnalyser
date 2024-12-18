@@ -22,6 +22,9 @@ if __name__ == "__main__":
         sentence_data["original"] = original_words
         sentence_data["morph_outputs"] = morph_output.split("\n")
 
+        # print('--------------->',sentence_data["original"])
+        # print('================>', sentence_data["morph_outputs"])
+
     # Merge morph_info with parser output
     updated_parser_output = merge_morph_with_parser(sentences_data, parser_output, MAPPER_DICT)
 

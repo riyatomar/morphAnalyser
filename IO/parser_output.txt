@@ -6,44 +6,58 @@
                     "dependency_relation": "pof__cn",
                     "head_index": "2",
                     "index": 1,
-                    "original_word": "mohana",
-                    "pos_tag": "NNPC"
+                    "original_word": "मोहन",
+                    "pos_tag": "NNPC",
+                    "wx_word": "mohana",
+                    "cnx_index": 7,
+                    "cnx_component": "begin"
                 },
                 {
                     "dependency_relation": "k1",
                     "head_index": "4",
                     "index": 2,
-                    "original_word": "lAla",
+                    "original_word": "लाल",
                     "pos_tag": "NNP",
-                    "cnx_vale": "hello"
+                    "wx_word": "lAla",
+                    "cnx_index": 7,
+                    "cnx_component": "inside"
                 },
                 {
                     "dependency_relation": "k2p",
                     "head_index": "4",
                     "index": 3,
-                    "original_word": "bAjAra",
-                    "pos_tag": "NNP"
+                    "original_word": "बाजार",
+                    "pos_tag": "NNP",
+                    "wx_word": "bAjAra"
                 },
                 {
                     "dependency_relation": "main",
                     "head_index": "0",
                     "index": 4,
-                    "original_word": "gayA",
-                    "pos_tag": "VM"
+                    "original_word": "गया",
+                    "pos_tag": "VM",
+                    "wx_word": "gayA"
                 },
                 {
                     "dependency_relation": "lwg__vaux",
                     "head_index": "4",
                     "index": 5,
-                    "original_word": "WA",
-                    "pos_tag": "VAUX"
+                    "original_word": "था",
+                    "pos_tag": "VAUX",
+                    "wx_word": "WA"
                 },
                 {
                     "dependency_relation": "rsym",
                     "head_index": "4",
                     "index": 6,
                     "original_word": "।",
-                    "pos_tag": "SYM"
+                    "pos_tag": "SYM",
+                    "wx_word": "."
+                },
+                {
+                    "index": 7,
+                    "original_word": "per_1",
+                    "wx_word": "[ne_1]"
                 }
             ],
             "project_id": 1,
@@ -56,50 +70,66 @@
                     "dependency_relation": "k1",
                     "head_index": "6",
                     "index": 1,
-                    "original_word": "mEM",
-                    "pos_tag": "PRP"
+                    "original_word": "मैं",
+                    "pos_tag": "PRP",
+                    "wx_word": "mEM"
                 },
                 {
                     "dependency_relation": "k7t",
                     "head_index": "6",
                     "index": 2,
-                    "original_word": "subaha",
-                    "pos_tag": "NN"
+                    "original_word": "सुबह",
+                    "pos_tag": "NN",
+                    "wx_word": "subaha",
+                    "cnx_index": 8,
+                    "cnx_component": "start"
                 },
                 {
                     "dependency_relation": "lwg__psp",
                     "head_index": "2",
                     "index": 3,
-                    "original_word": "se",
-                    "pos_tag": "PSP"
+                    "original_word": "से",
+                    "pos_tag": "PSP",
+                    "wx_word": "se"
                 },
                 {
                     "dependency_relation": "k7t",
                     "head_index": "6",
                     "index": 4,
-                    "original_word": "rAwa",
-                    "pos_tag": "NN"
+                    "original_word": "रात",
+                    "pos_tag": "NN",
+                    "wx_word": "rAwa",
+                    "cnx_index": 8,
+                    "cnx_component": "end"
                 },
                 {
                     "dependency_relation": "lwg__psp",
                     "head_index": "4",
                     "index": 5,
-                    "original_word": "waka",
-                    "pos_tag": "PSP"
+                    "original_word": "तक",
+                    "pos_tag": "PSP",
+                    "wx_word": "waka"
                 },
                 {
                     "dependency_relation": "main",
                     "head_index": "0",
                     "index": 6,
-                    "original_word": "paDZUMgA",
-                    "pos_tag": "VM"
+                    "original_word": "पढ़ूंगा",
+                    "pos_tag": "VM",
+                    "wx_word": "paDZUMgA"
                 },
                 {
                     "dependency_relation": "rsym",
                     "head_index": "6",
                     "index": 7,
                     "original_word": "।",
-                    "pos_tag": "SYM"
+                    "pos_tag": "SYM",
+                    "wx_word": "."
+                },
+                {
+                    "index": 8,
+                    "original_word": "[span_1]",
+                    "wx_word": "[span_1]"
                 }
             ],
             "project_id": 1,

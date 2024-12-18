@@ -45,21 +45,80 @@ def read_parser_output(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         return json.load(file)["response"]
 
+# def get_morph_info(word_data, pos_tag):
+#     cat_value = MAPPER_DICT.get(pos_tag, None)
+#     spans = word_data.split('/')
+    
+#     if not spans:
+#         return "NO_SPAN_FOUND"
+
+#     if not cat_value:
+#         return spans[1]
+
+#     for span in spans:
+#         if f"<cat:{cat_value}>" in span:
+#             return span
+    
+#     return spans[1]
+
 def get_morph_info(word_data, pos_tag):
     cat_value = MAPPER_DICT.get(pos_tag, None)
     spans = word_data.split('/')
     
-    if not spans:
+    # Check if spans list is empty or has insufficient elements
+    if len(spans) < 2:
         return "NO_SPAN_FOUND"
 
     if not cat_value:
-        return spans[1]
+        return spans[1]  # Safe since we checked len(spans) >= 2
 
     for span in spans:
         if f"<cat:{cat_value}>" in span:
             return span
-    
-    return spans[1]
+
+    return spans[1]  # Safe since we checked len(spans) >= 2
+
+
+# def merge_morph_with_parser(sentences_data, parser_output):
+#     for sentence_data in sentences_data:
+#         sentence_id = sentence_data["sentence_id"]
+#         original_words = sentence_data["original"]
+#         morph_outputs = sentence_data["morph_outputs"]
+
+#         matching_parser = next((item for item in parser_output if item["sentence_id"] == sentence_id), None)
+
+#         if matching_parser:
+#             for parser_word in matching_parser["parser_output"]:
+#                 word = parser_word["wx_word"]
+#                 pos_tag = parser_word["pos_tag"]
+
+#                 # Find corresponding morph_output
+#                 morph_output = next((mo for mo in morph_outputs if word in mo), None)
+#                 if morph_output:
+#                     morph_info = get_morph_info(morph_output, pos_tag)
+
+#                     # Extract root and tags
+#                     root_pattern = r"^(\w+)"
+#                     root_pattern1 = r"^(\*?\w+\$?)"
+#                     tags_pattern = r"<([^>]+)>"
+
+#                     root_match = re.match(root_pattern, morph_info)
+#                     root_match1 = re.match(root_pattern1, morph_info)
+#                     root = root_match.group(1) if root_match else root_match1.group(1).strip('*$')
+
+#                     tags = re.findall(tags_pattern, morph_info)
+#                     morph_info_dict = {"root": root}
+#                     for tag in tags:
+#                         if ':' in tag:
+#                             key, value = tag.split(':')
+#                             morph_info_dict[key] = value
+#                         else:
+#                             morph_info_dict[tag] = None
+
+#                     # Attach morph_info to parser_word
+#                     parser_word["morph_info"] = morph_info_dict
+
+#     return parser_output
 
 def merge_morph_with_parser(sentences_data, parser_output):
     for sentence_data in sentences_data:
@@ -71,7 +130,11 @@ def merge_morph_with_parser(sentences_data, parser_output):
 
         if matching_parser:
             for parser_word in matching_parser["parser_output"]:
-                word = parser_word["original_word"]
+                # Check if 'pos_tag' exists in parser_word
+                if "pos_tag" not in parser_word:
+                    continue  # Skip this parser_word
+
+                word = parser_word["wx_word"]
                 pos_tag = parser_word["pos_tag"]
 
                 # Find corresponding morph_output
@@ -102,6 +165,7 @@ def merge_morph_with_parser(sentences_data, parser_output):
 
     return parser_output
 
+
 if __name__ == "__main__":
     input_file = "IO/input.txt"
     parser_output_file = "IO/parser_output.txt"
@@ -127,3 +191,4 @@ if __name__ == "__main__":
         json.dump({"response": updated_parser_output}, file, ensure_ascii=False, indent=4)
 
     print(f"Updated parser output saved to {output_file}")
+
