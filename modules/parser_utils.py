@@ -1,4 +1,6 @@
 import re
+import sys, os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/..")
 from modules.morph_analysis import get_morph_info
 
 def merge_morph_with_parser(sentences_data, parser_output, mapper_dict):
@@ -6,7 +8,7 @@ def merge_morph_with_parser(sentences_data, parser_output, mapper_dict):
         sentence_id = sentence_data["sentence_id"]
         original_words = sentence_data["original"]
         morph_outputs = sentence_data["morph_outputs"]
-        print(morph_outputs)
+        # print(morph_outputs)
         # Preprocess morph_outputs into a dictionary
         morph_dict = {}
         for morph in morph_outputs:

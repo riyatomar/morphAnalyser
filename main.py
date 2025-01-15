@@ -1,4 +1,5 @@
-import os
+import sys, os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/..")
 from modules.file_io import read_from_json, read_parser_output, save_to_json
 from modules.wx_converter import devanagari_to_wx
 from modules.morph_analysis import morph_analyzer, get_morph_info
